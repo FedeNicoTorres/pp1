@@ -96,6 +96,8 @@ main{
 
 /* fondo por defecto */
 .background-pieza{
+  
+  /*background-image: url('pieza-abz.jpg');*/
   background-image: url('pieza-abz.jpg');
   background-position: center;
   background-size: cover;
@@ -131,5 +133,6 @@ main{
 }
 
 /* ...existing code... */
+
 
 
