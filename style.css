@@ -1,0 +1,132 @@
+/* ...existing code... */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+/* Header y tipografías: tamaños fluidos */
+header{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  background-color: rgb(244, 238, 199);
+}
+
+#memotest-titulo{
+  font-family: "Barriecito", system-ui;
+  font-weight: 600;
+  /* tamaño fluido: entre 28px y 60px */
+  font-size: clamp(28px, 6vw, 60px);
+  color: rgb(207, 183, 47);
+  text-shadow: 1px 1px 7px rgba(0,0,0,0.28);
+  letter-spacing: 2px;
+}
+
+main{
+  background-color: rgb(244, 238, 199);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+#p-turnos{
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  /* tamaño fluido para marcador */
+  font-size: clamp(16px, 2.4vw, 26px);
+  letter-spacing: 1px;
+  color: rgb(207, 183, 47);
+  text-shadow: 1px 1px 7px rgba(0,0,0,0.);
+  margin-bottom: 1%;
+}
+
+#p-turnos span{
+  color: rgb(43, 51, 175);
+}
+
+.container-marcador{
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(16px, 2.4vw, 26px);
+  letter-spacing: 1px;
+  color: rgb(207, 183, 47);
+  text-shadow: 1px 1px 7px rgba(0,0,0,0.28);
+}
+
+#span-jugador1{
+  color: #c54a4a;
+}
+
+#span-jugador2{
+  color: #ffa200;
+}
+
+/* Contenedor flexible: ancho máximo y grid que se adapta */
+/* ...existing code... */
+#container-memotest{
+  display: grid;
+  /* en PC: 8 columnas para lograr 3 filas de 8 (24 piezas) */
+  grid-template-columns: repeat(8, minmax(90px, 1fr));
+  gap: 12px;
+  width: min(1400px, 92%);
+  margin: 12px 0;
+}
+/* ...existing code... */
+
+/* Piezas: tamaño responsivo con aspect-ratio para mantener proporción */
+.pieza{
+  width: 100%;
+  /* altura proporcional (proporciona formas agradables en móviles y desktop) */
+  aspect-ratio: 3 / 4;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.pieza:active { transform: scale(0.98); }
+
+/* fondo por defecto */
+.background-pieza{
+  background-image: url('imgs/pieza-abz.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+/* Media queries finos para dispositivos más pequeños */
+@media (max-width: 900px) {
+  #container-memotest{
+    gap: 10px;
+  }
+  .pieza{ aspect-ratio: 4 / 5; }
+}
+
+@media (max-width: 600px){
+  header{ padding: 8px 12px; }
+  #memotest-titulo{ font-size: clamp(22px, 8vw, 40px); }
+  #container-memotest{
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+    width: 96%;
+  }
+  .pieza{ aspect-ratio: 5 / 6; border-radius: 6px; }
+  #p-turnos, .container-marcador { font-size: clamp(14px, 4vw, 18px); }
+}
+
+/* Muy pequeño / vertical estrecho */
+@media (max-width: 380px) {
+  #container-memotest{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .pieza{ aspect-ratio: 1 / 1.2; }
+}
+/* ...existing code... */
