@@ -96,7 +96,7 @@ main{
 
 /* fondo por defecto */
 .background-pieza{
-  background-image: url('imgs/pieza-abz.jpg');
+  background-image: img src="https://drive.google.com/file/d/1UTNnCI33yGWHLYuuEtol43PHTh3Tcl_Y/view?usp=sharing" alt="Foto de Fede Torres";
   background-position: center;
   background-size: cover;
 }
@@ -129,4 +129,5 @@ main{
   }
   .pieza{ aspect-ratio: 1 / 1.2; }
 }
+
 /* ...existing code... */
