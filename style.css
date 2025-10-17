@@ -96,7 +96,7 @@ main{
 
 /* fondo por defecto */
 .background-pieza{
-  background-image: url('https://drive.google.com/file/d/11bTm17Phn39gNTB1AhbEOxJxWuLP8yG3/view?usp=sharing');
+  background-image: url('pieza-abz.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -131,4 +131,5 @@ main{
 }
 
 /* ...existing code... */
+
 
